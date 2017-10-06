@@ -46,6 +46,18 @@
             <p v-bind:style="styleObject">Inline style using styleObject</p>
             <p v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex']}"></p>
         </div>
+
+        <div id="app-5">
+            <template v-if="loginType === 'username'">
+                <label for="username">Username</label>
+                <input placeholder="Enter your username" key="username-input" />
+            </template>
+            <template v-else>
+                <label for="email">Email</label>
+                <input placeholder="Enter your email address" key="email-input" />
+            </template>
+            <button v-on:click="toggleLoginType">Toggle</button>
+        </div>
         
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/vue-resource"></script>
@@ -136,7 +148,19 @@
                         fontSize: '25px'
                     }
                 }
-            })
+            });
+
+            var app5 = new Vue({
+                el: '#app-5',
+                data: {
+                    loginType: 'username'
+                },
+                methods: {
+                    toggleLoginType: function() {
+                        this.loginType = this.loginType == 'username' ? 'email' : 'username';
+                    }
+                }
+            });
         </script>
     </body>
 </html>
