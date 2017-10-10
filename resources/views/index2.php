@@ -19,6 +19,7 @@
         </style>
     </head>
     <body>
+        <a href="/next2">Next page</a>
         <div id="app" v-cloak>
             <p>
                 Ask a yes/no question:

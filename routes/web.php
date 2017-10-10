@@ -18,3 +18,19 @@ Route::get('/', function () {
 Route::get('/next', function () {
     return view('index2');
 });
+
+Route::get('/next2', function() {
+    return view('index3');
+});
+
+Route::get('/todo', function() {
+    return view('todo');
+});
+
+Route::get('/events', function() {
+    return view('events');
+});
+
+Route::get('/components', function() {
+    return view('components');
+});
